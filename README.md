@@ -1,2 +1,2 @@
-# SeleniumC-- SauceLabTest
+# Selenium C# SauceLabTest
 SauceDemoTest
