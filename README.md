@@ -1,7 +1,7 @@
 # Selenium C# SauceLabTest
 SauceDemoTest
 
-If you have Visual Studio 2022, the Nunit extension and the Extent Report extension, you should be able to download this, open the .sln file, and run all of the tests as is.
+Install Visual Studio 2022, the Nunit extension and the Extent Report extension, you should be able to download the whole repository, open the .sln file, and run all of the tests as is.
 
       **Folder Structure**
       
