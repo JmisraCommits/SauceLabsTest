@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+﻿using OpenQA.Selenium;
 
 namespace SauceDemoTests.Pages
 {
@@ -17,6 +12,7 @@ namespace SauceDemoTests.Pages
         private readonly By _productPrices = By.ClassName("inventory_item_price");
         private readonly By _addToCartButtons = By.CssSelector(".pricebar button");
         private readonly By _shoppingCartBadge = By.ClassName("shopping_cart_badge");
+        private readonly By _cartLink = By.ClassName("shopping_cart_link");
 
         public ProductsPage(IWebDriver driver) : base(driver)
         {
@@ -77,7 +73,7 @@ namespace SauceDemoTests.Pages
         {
             try
             {
-               
+
                 var productElements = Driver.FindElements(_inventoryItems);
                 foreach (var product in productElements)
                 {
@@ -98,6 +94,7 @@ namespace SauceDemoTests.Pages
 
         }
 
+
         public int GetCartItemCount()
         {
             try
@@ -109,5 +106,18 @@ namespace SauceDemoTests.Pages
                 return 0;
             }
         }
+        /*public CartPage GoToCart()
+        {
+            Click(By.ClassName("shopping_cart_link"));
+            return new CartPage(Driver);
+        }*/
+
+        public CartPage GoToCart()
+        {
+            Click(_cartLink);
+            return new CartPage(Driver);
+        }
+
+
     }
 }

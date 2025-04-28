@@ -1,13 +1,11 @@
-﻿using System;
-using System.IO;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using SauceDemoTests.Configuration;
 
 namespace SauceDemoTests.Utilities
 {
     public static class ConfigurationManager
     {
-        private static TestSettings _settings;
+        private static TestSettings? _settings = null;
 
         public static TestSettings GetSettings()
         {

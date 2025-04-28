@@ -1,5 +1,4 @@
 ﻿// Pages/BasePage.cs
-using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SauceDemoTests.Configuration;
@@ -68,5 +67,32 @@ namespace SauceDemoTests.Pages
             var select = new SelectElement(dropdown);
             select.SelectByText(text);
         }
+
+        /*protected void TakeScreenshot(string testName)
+        {
+            try
+            {
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string screenshotPath = Path.Combine(Directory.GetCurrentDirectory(), "Screenshots");
+
+                // Create directory if it doesn't exist
+                if (!Directory.Exists(screenshotPath))
+                    Directory.CreateDirectory(screenshotPath);
+
+                string fileName = $"{testName}_{timestamp}.png";
+                string fullPath = Path.Combine(screenshotPath, fileName);
+
+                Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+                screenshot.SaveAsFile(fullPath);
+
+                Console.WriteLine($"Screenshot saved: {fullPath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error taking screenshot: {ex.Message}");
+            }
+        }
+        */
+
     }
 }

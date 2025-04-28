@@ -1,12 +1,8 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 using SauceDemoTests.Configuration;
-using SauceDemoTests.Utilities;
-using Microsoft.Extensions.Configuration;
-using OpenQA.Selenium.Interactions;
 
 namespace SauceDemoTests.Drivers
 {
@@ -65,7 +61,7 @@ namespace SauceDemoTests.Drivers
                     chromeOptions.AddArguments("--suppress-message-center-popups");
                     chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
                     chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
-                    
+
 
 
                     driver = new ChromeDriver(chromeOptions);

@@ -1,6 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
-using SauceDemoTests.Configuration;
+﻿using OpenQA.Selenium;
 
 namespace SauceDemoTests.Pages
 {

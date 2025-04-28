@@ -1,20 +1,18 @@
-using System;
-
 namespace SauceDemoTests.Configuration
 {
     public class TestSettings
     {
-        public string BaseUrl { get; set; }
-        public Credentials Credentials { get; set; }
-        public Timeouts Timeouts { get; set; }
-        public BrowserSettings BrowserSettings { get; set; }
+        public string BaseUrl { get; set; } = string.Empty;
+        public Credentials Credentials { get; set; } = new Credentials();
+        public Timeouts Timeouts { get; set; } = new Timeouts();
+        public BrowserSettings BrowserSettings { get; set; } = new BrowserSettings();
     }
 
     public class Credentials
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Wrongpassword { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Wrongpassword { get; set; } = string.Empty;
     }
 
     public class Timeouts
@@ -25,7 +23,7 @@ namespace SauceDemoTests.Configuration
 
     public class BrowserSettings
     {
-        public string DefaultBrowser { get; set; }
-        public bool Headless { get; set; }
+        public string DefaultBrowser { get; set; } = string.Empty;
+        public bool Headless { get; set; } = false;
     }
 }

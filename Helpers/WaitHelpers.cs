@@ -1,10 +1,7 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 using SauceDemoTests.Configuration;
-using SauceDemoTests.Utilities;
-using Microsoft.Extensions.Configuration;
+using SeleniumExtras.WaitHelpers;
 
 namespace SauceDemoTests.Helpers
 {

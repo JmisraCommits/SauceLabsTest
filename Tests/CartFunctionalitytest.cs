@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using SauceDemoTests.Pages;
-using SauceDemoTests.Tests;
+﻿using SauceDemoTests.Pages;
+using MSTest = Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SeleniumC_.Tests
+namespace SauceDemoTests.Tests
 {
     public class CartFunctionalitytest : BaseTest
     {
@@ -21,19 +15,19 @@ namespace SeleniumC_.Tests
             // Login with valid credentials
             ProductsPage = LoginPage.LoginWithValidCredentials();
 
-            
-
-                // Verify successful login
-                //pm Assert.IsTrue(ProductsPage.IsProductsPageLoaded(), "Products page was not loaded after login");
-                //pm Assert.AreEqual("Products", ProductsPage.GetHeaderText(), "Header text does not match expected value");
+            // Verify successful login
+            MSTest.Assert.IsTrue(ProductsPage.IsProductsPageLoaded(), "Products page was not loaded after login");
+            MSTest.Assert.AreEqual("Products", ProductsPage.GetHeaderText(), "Header text does not match expected value");
             int initialCount = ProductsPage.GetCartItemCount();
             string productName = ProductsPage.GetProductNames()[initialCount];
 
             ProductsPage.AddProductToCart(productName);
             int laterCount = ProductsPage.GetCartItemCount();
+            Assert.That(laterCount != 0);
             // Log test success
+            Console.WriteLine("The value of item in the cart is: " + laterCount);
             Console.WriteLine("Login test passed successfully!");
         }
     }
-    
-    }
+
+}
