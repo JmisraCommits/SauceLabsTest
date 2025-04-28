@@ -1,2 +1,0 @@
-# Selenium C# SauceLabTest
-SauceDemoTest
